@@ -231,6 +231,24 @@
         "strategy": "external"
       }
     },
+
+    {
+      "name": "Analyze",
+      "cacheVariables":
+      {
+        "ENABLE_CODE_ANALYSIS": true
+      },
+      "hidden": true
+    },
+    {
+      "name": "Coverage",
+      "cacheVariables":
+      {
+        "BUILD_TOOLS": false,
+        "ENABLE_CODE_COVERAGE": true
+      },
+      "hidden": true
+    },
     {
       "name": "Fuzzing",
       "cacheVariables": {
@@ -353,7 +371,10 @@
     { "name": "x64-Debug-ICX"    , "description": "Intel oneAPI Compiler (Debug) with DX12", "inherits": [ "base", "x64", "Debug", "IntelLLVM" ] },
     { "name": "x64-Release-ICX"  , "description": "Intel oneAPI Compiler (Release) with DX12", "inherits": [ "base", "x64", "Release", "IntelLLVM" ] },
 
-    { "name": "x64-Fuzzing"      , "description": "MSVC for x64 (Release) with ASan", "inherits": [ "base", "x64", "Release", "MSVC", "Fuzzing" ] }
+    { "name": "x64-Analyze"       , "description": "MSVC for x64 (Debug) with DX12 using /analyze", "inherits": [ "base", "x64", "Debug", "MSVC", "Analyze" ] },
+    { "name": "x64-Coverage"      , "description": "MSVC for x64 (Debug) with DX12 w/ Code Coverage", "inherits": [ "base", "x64", "Debug", "MSVC", "Coverage" ] },
+    { "name": "x64-Coverage-Clang", "description": "Clang/LLVM for x64 (Debug) with DX12 w/ Code Coverage", "inherits": [ "base", "x64", "Debug", "Clang", "Coverage" ] },
+    { "name": "x64-Fuzzing"       , "description": "MSVC for x64 (Release) with ASan", "inherits": [ "base", "x64", "Release", "MSVC", "Fuzzing" ] }
   ],
   "testPresets": [
     { "name": "x64-Debug"      , "configurePreset": "x64-Debug" },
@@ -381,6 +402,9 @@
     { "name": "x64-Release-ICC"  , "configurePreset": "x64-Release-ICC"},
 
     { "name": "x64-Debug-ICX"    , "configurePreset": "x64-Debug-ICX" },
-    { "name": "x64-Release-ICX"  , "configurePreset": "x64-Release-ICX"}
+    { "name": "x64-Release-ICX"  , "configurePreset": "x64-Release-ICX"},
+
+    { "name": "x64-Debug-JPEG-PNG"  , "configurePreset": "x64-Debug-JPEG-PNG" },
+    { "name": "x64-Release-JPEG-PNG", "configurePreset": "x64-Release-JPEG-PNG"}
   ]
 }

@@ -47,7 +47,7 @@ struct IWICImagingFactory;
 struct IWICMetadataQueryReader;
 #endif
 
-#define DIRECTX_TEX_VERSION 204
+#define DIRECTX_TEX_VERSION 205
 
 
 namespace DirectX
@@ -71,6 +71,8 @@ namespace DirectX
     size_t __cdecl BitsPerPixel(_In_ DXGI_FORMAT fmt) noexcept;
 
     size_t __cdecl BitsPerColor(_In_ DXGI_FORMAT fmt) noexcept;
+
+    size_t __cdecl BytesPerBlock(_In_ DXGI_FORMAT fmt) noexcept;
 
     enum FORMAT_TYPE
     {
